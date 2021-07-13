@@ -26,16 +26,9 @@
             <h2>Nueva Tarea</h2>
             <div class="new">
                 <label for="nueva">Nombre de la tarea</label>
-                <input type="text" v-model='newTask.nombre'>
+                <input type="text" v-model='nombre'>
                 <label for="descripcion">Descripcion</label>
-                <textarea v-model="newTask.descripcion"></textarea>
-                <label for="estado">Estado</label>
-                <select name="" id="estado" >
-                    <option value=""></option>
-                    <option value="">A realizar</option>
-                    <option value="">Completada</option>
-                </select>
-                <br>
+                <textarea v-model="descripcion"></textarea>
                 <button v-on:click="agregarTarea">Guardar nueva tarea</button>
             </div>
         </aside>
@@ -43,12 +36,14 @@
             <h2>Mis Tareas</h2>
             <div class="list">
                 <ul class="titles">
-                    <li>Nombre</li>
+                    <li>Numero</li>
+                    <li>Tarea</li>
                     <li>Descripcion</li>
                     <li>Estado</li>
                     <li>Accion</li>
                 </ul>
-                <ul class="tasks" v-for='task in tasks'>
+                <ul class="tasks" v-for='(task, index) in tasks'>
+                    <li :key = "index">{{index +1}}</li>
                     <li>{{task.nombre}}</li>
                     <li>{{task.descripcion}}</li>
                     <li>{{task.estado}}</li>
