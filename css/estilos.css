@@ -5,7 +5,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background: #F5F5F5;
+    background: #FAFAFA;
 }
 ul{
     list-style: none;
@@ -13,51 +13,62 @@ ul{
 header, nav{
     width: 100%;
     display: flex;
-    background: #7B1FA2;
+    background-color: #1565C0;
 }
 header{
     padding:  15px;
+    height: 200px;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 nav h1{
-    width: 30%;
-    color: aliceblue;
+    color: #1565C0;
+    width: 60%;
+    text-align: center;
 }
 nav .search{
-    width: 70%;
     display: flex;
+    width: 70%;
     flex-direction: column;
     color: aliceblue;
 }
 nav .search label{
     font-size: 13px;
+    color: #F5F5F5;
 }
 nav .search input{
     padding: 3px 10px;
     border:0;
     border-radius: 3px;
+    border: 1px solid #B0BEC5;
+    background: #ECEFF1;
 }
 section{
     display: flex;
+    transform: translateY(-80px);
+    width: 70%;
+    background-color: #F5F5F5;
+    border-radius: 3px;
+    margin: auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 section aside{
-    width: 30%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     padding: 25px;
 }
 section article{
-    width: 70%;
+    width: 65%;
     padding: 25px;
 }
 section article .list{
     margin: 25px 0;
     height: 100%;
-}
-section article .list ul{
-    border: 1px solid #B0BEC5;
-    border-right: 0;
-    border-left: 0;
-    border-top: 0;
 }
 section article .list ul:last-child{
     border:0
@@ -69,9 +80,8 @@ section .new{
 }
 .new  input, .new  textarea, .new  button{
     margin-bottom: 10px;
-    background: #ECEFF1;
+    background: #edf0f2;
     border:0;
-    border: 1px solid #B0BEC5;
     border-radius: 3px;
     padding: 5px 10px;
 }
@@ -80,10 +90,16 @@ section .new{
     resize: none;
 }
 .new button{
-    background: #7B1FA2;
-    color: aliceblue;
+    background: #ECEFF1;
+    color:#1565C0;
+    font-weight: bold;
     border:0;
     cursor: pointer;
+    transition: all ease 0.3s;
+}
+.new button:hover{
+    background: #1565C0;
+    color: aliceblue;
 }
 article .titles, article .tasks{
     display: flex;
@@ -92,9 +108,11 @@ article .titles, article .tasks{
 article .titles li, article .tasks li{
     width: 25%;
     padding: 5px 15px;
-    border-right: 1px solid #B0BEC5;
 }
 article .titles li:last-child, article .tasks li:last-child{
     border:0
+}
+.estado{
+    cursor: pointer;
 }
 
