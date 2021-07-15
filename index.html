@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,26 +28,27 @@
                 <h2>Nueva Tarea</h2>
                 <div class="new">
                     <label for="nueva">Nombre de la tarea</label>
-                    <input type="text" v-model='nombre'>
+                    <input type="text" v-model='nombre' placeholder="estudiar matematica">
                     <label for="descripcion">Descripcion</label>
-                    <textarea v-model="descripcion"></textarea>
+                    <textarea v-model="descripcion" placeholder="repasar algoritmos"></textarea>
                     <button v-on:click="agregarTarea">Guardar nueva tarea</button>
                 </div>
             </aside>
             <article>
                 <h2>Mis Tareas</h2>
                 <div class="list">
-                    
-                    <ul class="tasks" v-for='(task, index) in tasks'>
-                        <li :key = "index">{{index +1}}</li>
-                        <li>{{task.nombre}}</li>
-                        <li>{{task.descripcion}}</li>
-                        <li v-on:click='estado(index)' class="estado">{{task.estado}}</li>
-                        <li>
-                            <span v-on:click='editar(index)'><i class="fas fa-pencil-alt"></i></span>
-                            <span v-on:click='borrar(index)'><i class="fas fa-trash-alt"></i></span>
-                        </li>
-                    </ul>
+                    <div class="tarea" v-for='(task, index) in tasks'>
+                        <h2><span :key='index'>{{index+1}}</span> {{task.nombre}}</h2>
+                        <p>{{task.descripcion}}</p>
+                        <div class="acciones">
+                            <span v-on:click='estado(index)' class="pointer">{{task.estado}}</span>
+                            <div>
+                                <span v-on:click='editar(index)' class="pointer"><i class="fas fa-pencil-alt"></i></span>
+                                <span v-on:click='borrar(index)' class="pointer"><i class="fas fa-trash-alt"></i></span>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
                 </div>
             </article>
 
