@@ -114,14 +114,18 @@ article .titles, article .tasks{
 
 
 .tarea{
-    margin-top: 20px;
-    margin-bottom: 35px;
     border-radius: 3px;
     padding:  10px;
 }
 .tarea hr{
     width: 20%;
     margin-top: 20px;
+    border:0;
+    height: 1px;
+    background-color: #CFD8DC;
+}
+hr:last-of-type{
+    background-color: rebeccapurple;
 }
 .tarea h2{
     color: #78909C;
@@ -147,7 +151,20 @@ article .titles, article .tasks{
     border:1px solid;
     color: #B71C1C
 }
+.finalizado{
+    text-decoration: line-through;
+}
+.estado{
+    border-radius: 3px;
+    border: 1px solid #CFD8DC;
+    padding: 3px 5px;
+    transition: all ease .3s
+}
+.estado:hover{
+    background: #CFD8DC;
+}
 .acciones div span:first-child{
     color: #1B5E20;
 }
+
 
