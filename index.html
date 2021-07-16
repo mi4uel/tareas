@@ -38,16 +38,15 @@
                 <h2>Mis Tareas</h2>
                 <div class="list">
                     <div class="tarea" v-for='(task, index) in tasks'>
-                        <h2><span :key='index'>{{index+1}}</span> {{task.nombre}}</h2>
+                        <h2><span :key='index'>{{index+1}}</span> <span :class ="{'finalizado' : task.estado ==='finalizado'}"> {{task.nombre}}</span></h2>
                         <p>{{task.descripcion}}</p>
                         <div class="acciones">
-                            <span v-on:click='estado(index)' class="pointer">{{task.estado}}</span>
+                            <span v-on:click='estado(index)' class="pointer estado">{{task.estado}}</span>
                             <div>
                                 <span v-on:click='editar(index)' class="pointer"><i class="fas fa-pencil-alt"></i></span>
                                 <span v-on:click='borrar(index)' class="pointer"><i class="fas fa-trash-alt"></i></span>
                             </div>
                         </div>
-                        <hr>
                     </div>
                 </div>
             </article>
