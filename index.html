@@ -18,7 +18,7 @@
                 <h1>To do List</h1>
                 <div class="search">
                     <label for="buscar">Buscar tarea</label>
-                    <input type="text" placeholder="ir al super" id="buscar">
+                    <input type="text" placeholder="ir al super" id="buscar" v-model='buscar'>
                 </div>
             </nav>
         </header>
@@ -37,9 +37,9 @@
             <article>
                 <h2>Mis Tareas</h2>
                 <div class="list">
-                    <div class="tarea" v-for='(task, index) in tasks'>
-                        <h2><span :key='index'>{{index+1}}</span> <span :class ="{'finalizado' : task.estado ==='finalizado'}"> {{task.nombre}}</span></h2>
-                        <p>{{task.descripcion}}</p>
+                    <div class="tarea" v-for='(task, index) in busqueda'>
+                        <h2><span :key='index'>{{index+1}}</span>: <span :class ="{'finalizado' : task.estado ==='finalizado'}"> {{task.nombre}}</span></h2>
+                        <p :class ="{'finalizado' : task.estado ==='finalizado'}"> {{task.descripcion}}</p>
                         <div class="acciones">
                             <span v-on:click='estado(index)' class="pointer estado">{{task.estado}}</span>
                             <div>

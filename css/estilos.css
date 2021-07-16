@@ -153,12 +153,16 @@ hr:last-of-type{
 }
 .finalizado{
     text-decoration: line-through;
+    transition: all ease .3s
 }
 .estado{
     border-radius: 3px;
     border: 1px solid #CFD8DC;
     padding: 3px 5px;
     transition: all ease .3s
+}
+.realizar{
+    background:blanchedalmond;
 }
 .estado:hover{
     background: #CFD8DC;
